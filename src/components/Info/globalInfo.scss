@@ -1,0 +1,31 @@
+.update-time{
+  text-align: right;
+  color: #8C8C8C;
+  font-size: 14px;
+}
+
+.legend-wrapper{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  .legend{
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.loading{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h3-title{
+  margin-top: 40px;
+  margin-bottom: 0px;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+.date-range{
+  padding: 15px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .ant-input{
+    background: rgb(243, 244, 245);
+  }
+  .ant-calendar-picker{
+    max-width: 250px;
+  }
+}

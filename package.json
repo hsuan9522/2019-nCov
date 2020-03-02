@@ -1,0 +1,42 @@
+{
+  "name": "2019-ncov",
+  "version": "1.0.0",
+  "description": null,
+  "keywords": [
+    "covid-19",
+    "2019-ncov",
+    "react"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@nivo/bar": "0.61.1",
+    "@nivo/line": "0.61.1",
+    "antd": "3.26.9",
+    "axios": "0.19.2",
+    "chinese-conv": "1.0.1",
+    "dayjs": "1.8.20",
+    "loadsh": "0.0.4",
+    "node-sass": "4.13.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

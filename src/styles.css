@@ -1,0 +1,9 @@
+.App {
+  /* font-family: sans-serif; */
+  font-family: "Rubik", "Noto Sans TC", serif, sans-serif;
+  /* text-align: center; */
+}
+
+.text-align-center {
+  text-align: center;
+}
