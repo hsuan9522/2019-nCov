@@ -2,16 +2,22 @@ import initState from '../store'
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
-    case 'ADD_COUNTRY_DATA': {
+    case 'ADD_COUNTRY_INFECTED': {
       return {
         ...state,
-        countryData: action.data,
+        countryInfected: action.data,
       };
     }
     case 'ADD_TOTAL_DATA': {
       return {
         ...state,
         totalData: action.data,
+      };
+    }
+    case 'ADD_COUNTRY_INFO': {
+      return {
+        ...state,
+        countryInfo: action.data,
       };
     }
     default:

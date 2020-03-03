@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ResponsiveBar } from "@nivo/bar";
-import countryName from "../../config/countryName";
 
 const CountryChart = props => {
-  const data = useSelector(state => state.countryData);
+  const data = useSelector(state => state.countryInfected);
+  const countryName = useSelector(state => state.countryInfo);
   const withoutChina = data.filter(
     el => el.Country_Region !== "Mainland China"
   );

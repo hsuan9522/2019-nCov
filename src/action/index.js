@@ -1,6 +1,7 @@
 import axios from 'axios';
+import zhCountryName from '../config/countryName.json';
 
-const getCountryData = ()=> {
+export const getCountryVirusData = ()=> {
   return (dispatch) =>{
     return axios.get('https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Confirmed%20desc&outSR=102100&resultOffset=0&resultRecordCount=250&cacheHint=true')
       .then(res=>{
@@ -21,7 +22,7 @@ const getCountryData = ()=> {
           return el.attributes;
         });
         dispatch({
-          type: "ADD_COUNTRY_DATA",
+          type: "ADD_COUNTRY_INFECTED",
           data: tmpData
         });
         dispatch({
@@ -32,4 +33,27 @@ const getCountryData = ()=> {
   }
 }
 
-export { getCountryData }
+export const getCountryInfo = ()=> {
+  return dispatch =>{
+    return axios.get('https://restcountries.eu/rest/v2/all')
+      .then(res=>{
+        const tmp = zhCountryName.map(el=>{
+          let detail = res.data.find(e => e.alpha2Code===el.code);
+          if(detail){
+            const { region, flag, subregion } = detail;
+            return Object.assign(el, { region, flag, subregion })
+          }else{
+            return el;
+          }
+        })
+        dispatch({ 
+          type: "ADD_COUNTRY_INFO",
+          data: tmp
+        })
+      })
+      .catch(err=>{
+      })
+  }
+}
+
+// export { getCountryVirusData }

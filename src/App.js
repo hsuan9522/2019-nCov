@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Row, Col, Layout } from "antd";
 import { useDispatch } from 'react-redux';
-import { getCountryData } from "./action"
+import { getCountryVirusData, getCountryInfo } from "./action"
 
 import "./styles.css";
 import "antd/dist/antd.css";
@@ -16,7 +16,8 @@ const { Footer, Content } = Layout;
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() =>{
-    dispatch(getCountryData())
+    dispatch(getCountryVirusData())
+    dispatch(getCountryInfo())
   },[])
   return (
     <div className="App">

@@ -1,6 +1,7 @@
 const initState = {
-  countryData: [],
+  countryInfected: [],
   totalData: {},
+  countryInfo: [],
 };
 
 export default initState;
