@@ -3,7 +3,7 @@ import { Icon } from "antd";
 
 const InfoBtn = props =>{
   return (
-    <div className="slide-btn">
+    <div className="slide-btn" onClick={()=> props.onClick()}>
       <Icon type="info"/>
     </div>
     )

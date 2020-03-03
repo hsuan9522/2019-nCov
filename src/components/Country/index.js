@@ -1,11 +1,9 @@
 import React from 'react';
-import { Spin, Icon } from 'antd';
 import { useSelector } from 'react-redux';
 import { ResponsiveBar } from "@nivo/bar";
 import countryName from "../../config/countryName";
 
 const CountryChart = props => {
-  const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
   const data = useSelector(state => state.countryData);
   const withoutChina = data.filter(
     el => el.Country_Region !== "Mainland China"
