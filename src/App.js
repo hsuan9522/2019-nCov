@@ -9,6 +9,7 @@ import "antd/dist/antd.css";
 import Info from "./components/Info";
 import Country from "./components/Country";
 import GlobalIncrease from "./components/globalIncrease";
+import State from "./components/State";
 import Slide from "./components/Slide/";
 const { Footer, Content } = Layout;
 
@@ -27,9 +28,10 @@ const App = () => {
           <Row type="flex" justify="center">
             <Col span={21}>
               <h2 className="text-align-center">新型冠狀病毒 2019-nCoV</h2>
-              <Info />
+              <State />
+              {/* <Info />
               <Country />
-              <GlobalIncrease />
+              <GlobalIncrease /> */}
             </Col>
           </Row>
         </Content>
