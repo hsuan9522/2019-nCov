@@ -10,35 +10,35 @@ const State = () => {
   const [dataRegion, setDataRegion] = useState([])
 
   useEffect(()=>{
-    // const data = countryInfected.map(el=>{
-    //   let info = countryName.find(e=>e.key === el.Country_Region );
-    //   if(info){
-    //     return Object.assign(el,info);
-    //   }else{
-    //     el.region = 'Other';
-    //     el.subregion = 'Other';
-    //     el.flag = null;
-    //     return el;
-    //   }
-    // })
-    // const dataByRegion = Object.values(data.reduce((acc, re)=>{
-    //   if(acc[re.region]){
-    //     acc[re.region]['Confirmed'] += re.Confirmed;
-    //     acc[re.region]['Deaths'] += re.Deaths;
-    //     acc[re.region]['Recovered'] += re.Recovered;
-    //   }else{
-    //     acc[re.region] = {
-    //       region: re.region,
-    //       Confirmed: re.Confirmed,
-    //       Deaths: re.Deaths,
-    //       Recovered: re.Recovered,
-    //     };
-    //   }
-    //   return acc;
-    // },{}))
-    console.log('countryInfected', countryInfected);
-    console.log('countryName', countryName);
-    // setDataRegion(dataByRegion);
+    if(!countryName || !countryInfected) return ()=>{};
+    const data = countryInfected.map(el=>{
+      let info = countryName.find(e=>e.key === el.Country_Region );
+      if(info){
+        return Object.assign(el,info);
+      }else{
+        el.region = 'Other';
+        el.subregion = 'Other';
+        el.flag = null;
+        return el;
+      }
+    })
+    const dataByRegion = Object.values(data.reduce((acc, re)=>{
+      if(re.region == undefined) console.log(re)
+      if(acc[re.region]){
+        acc[re.region]['Confirmed'] += re.Confirmed;
+        acc[re.region]['Deaths'] += re.Deaths;
+        acc[re.region]['Recovered'] += re.Recovered;
+      }else{
+        acc[re.region] = {
+          region: re.region,
+          Confirmed: re.Confirmed,
+          Deaths: re.Deaths,
+          Recovered: re.Recovered,
+        };
+      }
+      return acc;
+    },{}))
+    setDataRegion(dataByRegion);
   }, [countryInfected, countryName])
 
   return (
@@ -46,8 +46,6 @@ const State = () => {
       {dataRegion &&
         <Region data={dataRegion} />
       }
-
-      <div>123</div>
     </div>
   )
 }

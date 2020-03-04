@@ -81,5 +81,5 @@
   { "code": "FI", "key": "Finland", "zh": "芬蘭" },
   { "code": "SE", "key": "Sweden", "zh": "瑞典" },
   { "code": "LK", "key": "Sri Lanka", "zh": "斯里蘭卡" },
-  { "code": "", "key": "United Arab Emirates", "zh": "阿拉伯" }
+  { "code": "AE", "key": "United Arab Emirates", "zh": "阿拉伯聯合大公國" }
 ]

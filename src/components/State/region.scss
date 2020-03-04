@@ -1,0 +1,8 @@
+.pie-wrapper {
+  height: 320px;
+  display: flex;
+  .pie {
+    height: 100%;
+    width: calc(100% / 3);
+  }
+}

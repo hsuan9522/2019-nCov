@@ -42,6 +42,9 @@ export const getCountryInfo = () => async dispatch => {
         const { region, flag, subregion, alpha3Code } = detail;
         return Object.assign(el, { region, flag, subregion, alpha3Code })
       } else {
+        el.region = 'Other';
+        el.flag = null;
+        el.subregion = 'Other';
         return el;
       }
     })
