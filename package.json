@@ -11,6 +11,7 @@
   "dependencies": {
     "@nivo/bar": "0.61.1",
     "@nivo/line": "0.61.1",
+    "@nivo/pie": "^0.61.1",
     "antd": "3.26.9",
     "axios": "0.19.2",
     "chinese-conv": "1.0.1",
