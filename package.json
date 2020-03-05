@@ -10,6 +10,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@nivo/bar": "0.61.1",
+    "@nivo/geo": "^0.61.1",
     "@nivo/line": "0.61.1",
     "@nivo/pie": "^0.61.1",
     "antd": "3.26.9",

@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { Modal } from "antd";
 
 import SlideBtn from "./slideBtn";
-import InfoBtn from "./InfoBtn";
+import InfoBtn from "./infoBtn";
+import MapBtn from "./mapBtn";
 import SlideMenu from "./slideMenu";
+import Map from "./map";
 import "./slide.scss";
 
 const Slide = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openMap, setOpenMap] = useState(false);
 
   function InfoModal() {
     Modal.info({
@@ -22,11 +25,15 @@ const Slide = () => {
   }
 
   return (
-    <div className={"slide-wrapper " + (openMenu ? "active" : "")}>
-      {openMenu && <SlideMenu />}
-      <div>
-        <SlideBtn onClick={() => setOpenMenu(!openMenu)} />
-        <InfoBtn onClick={InfoModal} />
+    <div>
+      {openMap && <Map />}
+      <div className={"slide-wrapper " + (openMenu ? "active" : "")}>
+        {openMenu && <SlideMenu />}
+        <div>
+          <SlideBtn onClick={() => setOpenMenu(!openMenu)} />
+          <MapBtn onClick={()=> setOpenMap(!openMap)}/>
+          <InfoBtn onClick={InfoModal} />
+        </div>
       </div>
     </div>
   );

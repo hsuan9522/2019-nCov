@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
 import _ from "lodash";
 
-import Region from "./Region"
+import Region from "./region"
 
 const State = () => {
   const countryInfected = useSelector(state=>state.countryInfected);

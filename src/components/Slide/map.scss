@@ -1,0 +1,21 @@
+.map-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 111;
+  margin: auto;
+  width: 90%;
+  height: 80%;
+  background: radial-gradient(black, transparent);
+  left: 0;
+  bottom: 0;
+}
+
+.close-btn{
+  text-decoration: underline;
+  right: 0px;
+  font-size: 15px;
+  padding: 15px 20px;
+  position: absolute;
+  cursor: pointer;
+}
