@@ -42,7 +42,7 @@ const State = () => {
   }, [countryInfected, countryName])
 
   return (
-    <div>
+    <div style={{marginTop: "30px"}}>
       {dataRegion &&
         <Region data={dataRegion} />
       }

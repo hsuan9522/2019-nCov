@@ -5,6 +5,7 @@ import { ResponsiveBar } from "@nivo/bar";
 const CountryChart = props => {
   const data = useSelector(state => state.countryInfected);
   const countryName = useSelector(state => state.countryInfo);
+  if(!data || !countryName) return (<div>There is no Data!</div>)
   const withoutChina = data.filter(
     el => el.Country_Region !== "Mainland China"
   );

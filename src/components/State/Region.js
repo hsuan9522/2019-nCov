@@ -36,7 +36,7 @@ const Region = (props) => {
                 <h3 className="title">{mapTitle[index]}</h3>
                 <ResponsivePie
                   data={el}
-                  margin={{ top: 5, right: 10, bottom: 40, left: 10 }}
+                  margin={{ top: 5, right: 10, bottom: 60, left: 10 }}
                   innerRadius={0.3}
                   padAngle={3}
                   cornerRadius={2}
@@ -54,9 +54,9 @@ const Region = (props) => {
           })
         }
       </div>
-      <div style={{textAlign: "center"}}>
-        {
-          tmpData[0].map((el, index) => {
+      <div style={{ textAlign: "center", marginTop: "10px"}}>
+        { data.length!=0 &&
+          data[0].map((el, index) => {
             return (
               <div key={index} className="pie-labels-wrapper">
                 <span className="pie-labels" style={{ background: nivoColor[index] }}></span>
