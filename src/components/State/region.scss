@@ -4,5 +4,20 @@
   .pie {
     height: 100%;
     width: calc(100% / 3);
+    .title{
+      text-align: center;
+    }
+  }
+}
+.pie-labels-wrapper{
+  display: inline-flex;
+  align-items: center;
+  margin: 0 10px;
+  .pie-labels{
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+    border-radius: 100%;
+    display: inline-block;
   }
 }
