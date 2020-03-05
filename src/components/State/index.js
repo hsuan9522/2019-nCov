@@ -26,15 +26,24 @@ const State = () => {
       if(re.region == undefined) console.log(re)
       if(acc[re.region]){
         acc[re.region]['Confirmed'] += re.Confirmed;
+        acc[re.region]['confirmedDetail'].push(re)
         acc[re.region]['Deaths'] += re.Deaths;
+        acc[re.region]['deathsDetail'].push(re)
         acc[re.region]['Recovered'] += re.Recovered;
+        acc[re.region]['recoveredDetail'].push(re)
       }else{
         acc[re.region] = {
           region: re.region,
           Confirmed: re.Confirmed,
           Deaths: re.Deaths,
           Recovered: re.Recovered,
+          confirmedDetail: [],
+          deathsDetail:[],
+          recoveredDetail: []
         };
+        acc[re.region].confirmedDetail.push(re);
+        acc[re.region].deathsDetail.push(re);
+        acc[re.region].recoveredDetail.push(re);
       }
       return acc;
     },{}))
