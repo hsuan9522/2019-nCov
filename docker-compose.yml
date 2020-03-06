@@ -1,0 +1,18 @@
+#the docker compose file version
+version: "3.7"
+# you can run multiple services inside one docker compose file
+# define them with their dependencies one after the other
+services:
+  # service 1 named react-dev
+  nginx:
+    # service 1 container name
+    image: nginx
+    container_name: nginx
+    ports:
+      - "3000:80"
+    expose:
+      - "80"
+    volumes:
+      - ./dist:/usr/share/nginx/html/dist
+      - ./build:/usr/share/nginx/html/
+      - ./nginx.conf:/usr/share/nginx/nginx.conf:ro

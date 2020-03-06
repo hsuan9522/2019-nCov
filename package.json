@@ -9,6 +9,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@babel/runtime": "^7.8.7",
     "@nivo/bar": "0.61.1",
     "@nivo/geo": "^0.61.1",
     "@nivo/line": "0.61.1",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
@@ -47,8 +49,7 @@
     "build": "webpack",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
-    "webpack-buil": "webpack --watch & webpack-dev-server --devtool eval --progress --colors --content-base build"
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
   },
   "browserslist": [
     ">0.2%",
