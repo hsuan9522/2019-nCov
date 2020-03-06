@@ -6,7 +6,8 @@
   margin: auto;
   width: 90%;
   height: 80%;
-  background: radial-gradient(black, transparent);
+  // background: radial-gradient(black, transparent);
+  background: -webkit-radial-gradient(center center, ellipse cover, rgba(0, 0, 0, 1) 0, rgba(76, 78, 75, 0.7) 100%);
   left: 0;
   bottom: 0;
 }

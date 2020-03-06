@@ -22,6 +22,7 @@ const Map = ()=> {
   return (
     <div className="map-wrapper">
       <div className="close-btn">Close</div>
+      {/* <h3 className="h3-title">確診人數世界地圖</h3> */}
       <ResponsiveChoropleth
         data={data}
         features={mapFeature.features}
