@@ -3,7 +3,7 @@ import { ResponsivePie } from '@nivo/pie'
 import { Icon } from 'antd';
 import './region.scss';
 
-import EachRegion from "./EachRegion"
+import EachRegion from "./eachRegion"
 
 const Region = (props) => {
   const [data, setData] = useState([]);

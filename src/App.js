@@ -20,6 +20,8 @@ const App = () => {
     dispatch(getCountryVirusData())
     dispatch(getCountryInfo())
   },[])
+
+  console.log('app')
   return (
     <div className="App">
       <Layout>
