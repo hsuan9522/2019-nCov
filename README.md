@@ -24,7 +24,7 @@ Install
 
 Run
 ```
-> $ npm run start / yarn build
+> $ npm run start / yarn start
 ```
 
 ## Build
