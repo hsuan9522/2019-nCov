@@ -10,7 +10,8 @@
   background: -webkit-radial-gradient(center center, ellipse cover, rgba(0, 0, 0, 1) 0, rgba(76, 78, 75, 0.7) 100%);
   left: 0;
   bottom: 0;
-  animation: animation-menu 1s;
+  animation: animation-map 1s;
+  transition: width 1s;
 }
 
 .close-btn{
@@ -22,4 +23,9 @@
   cursor: pointer;
   color: white;
   z-index: 1111;
+}
+
+@keyframes animation-map {
+  from {opacity: 0; width:0px}
+  to {opacity: 1; width:90%}
 }
