@@ -20,7 +20,7 @@ const CountryChart = props => {
   return (
       <div>
         <h3 className="h3-title">各國人數狀態</h3>
-        <div style={{ height: "1500px" }}>
+        <div style={{ height: "1700px" }}>
           <ResponsiveBar
             layout="horizontal"
             data={withoutChina}
