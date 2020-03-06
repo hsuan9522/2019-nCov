@@ -19,10 +19,25 @@ Clone
 
 Install
 ```
-> $ npm install
+> $ npm install / yarn install
 ```
 
 Run
 ```
-> $ npm run start
+> $ npm run start / yarn build
 ```
+
+## Build
+```
+> $ npm run build / yarn build
+```
+
+## 小記
+> 如何知道build的檔案由無成功，用的是docker做測試，因為沒有把node包進image裡，需要先build在up。須先有docker和docker-compose。
+
+1. 先build 也就是上面的指令
+2. ```> $ docker-compose up```
+3. 若是使用react-build的 ```localhost:3000``` webpack則是 ```localhost:3000/dist```
+
+需要修改都可以至docker-compose.yml裡面做修改
+
