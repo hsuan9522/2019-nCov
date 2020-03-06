@@ -6,7 +6,7 @@ import mapFeature from "../../config/map.json"
 
 import './map.scss';
 
-const Map = ()=> {
+const Map = (props)=> {
   const infected = useSelector(state=>state.countryInfected);
   const [data, setData] = useState([]);
   useEffect(()=>{
@@ -21,7 +21,7 @@ const Map = ()=> {
   }, [infected])
   return (
     <div className="map-wrapper">
-      <div className="close-btn">Close</div>
+      <div className="close-btn" onClick={()=>props.onClick()}>Close</div>
       {/* <h3 className="h3-title">確診人數世界地圖</h3> */}
       <ResponsiveChoropleth
         data={data}

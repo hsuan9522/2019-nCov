@@ -26,13 +26,13 @@ const Slide = () => {
 
   return (
     <div>
-      {openMap && <Map />}
+      {openMap && <Map onClick={()=>setOpenMap(false)}/>}
       <div className={"slide-wrapper " + (openMenu ? "active" : "")}>
         {openMenu && <SlideMenu />}
         <div>
           <SlideBtn onClick={() => setOpenMenu(!openMenu)} />
           <MapBtn onClick={()=> setOpenMap(!openMap)}/>
-          <InfoBtn onClick={InfoModal} />
+          <InfoBtn onClick={InfoModal}/>
         </div>
       </div>
     </div>
