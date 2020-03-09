@@ -21,7 +21,6 @@ const App = () => {
     dispatch(getCountryInfo())
   },[])
 
-  console.log('app')
   return (
     <div className="App">
       <Layout>
@@ -33,7 +32,7 @@ const App = () => {
               <Info />
               <State />
               <Country />
-              <GlobalIncrease />
+              {/* <GlobalIncrease /> */}
             </Col>
           </Row>
         </Content>

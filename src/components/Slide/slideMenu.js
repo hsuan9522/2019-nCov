@@ -4,7 +4,6 @@ import { Row, Col } from "antd";
 
 const SlideMenu = ()=>{
   const countryInfected = useSelector(state => state.countryInfected);
-  const countryName = useSelector(state=> state.countryInfo);
 
   return (
     <div className="slide-menu">
@@ -28,10 +27,10 @@ const SlideMenu = ()=>{
             key={el.OBJECTID}
             type="flex"
             justify="space-between"
+            style={el.code==='TW' ? {color: "darkred"}: {}}
           >
             <Col span={6}>
-              {(countryName.find(e => el.Country_Region === e.key) || {})
-                .zh || el.Country_Region}
+              {el.zh || el.Country_Region }
             </Col>
             <Col className="col" span={4}>
               {el.Confirmed}
