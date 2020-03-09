@@ -1,10 +1,10 @@
 README
 ===========================
 react練習專案，API來源是翻找[GISAID](https://www.gisaid.org/)而來的，這樣是可以的吧？！僅是利用API來練習框架，並無商業用途。
-因為沒有購買sever無法架起這個專案，演示大概可以參照我的[CodeSandbox](https://sftt4.csb.app/)，codeSandBox較陽春，用的是舊的寫法，Github這有經過整理，增加新功能，也納入了React Hook的用法，但可能有漏網之魚。
+[CodeSandbox](https://sftt4.csb.app/)，codeSandBox是最初版，用的是舊的寫法，Github這有經過整理，增加新功能，也納入了React Hook的用法，但可能有漏網之魚。
 
 ## DEMO
-[CodeSandbox](https://sftt4.csb.app/)
+[Demo Site](https://hsuan9522.github.io/2019-nCov/)
 
 ## Reference
 1. [GISAID](https://sftt4.csb.app/)

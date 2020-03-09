@@ -16,7 +16,7 @@ module.exports = {
   ],
   // output 是放入產生出來的結果的相關參數
   output: {
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/`,
     filename: 'index_bundle.js',
   },
   module: {
