@@ -53,7 +53,7 @@
     "eject": "react-scripts eject",
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
