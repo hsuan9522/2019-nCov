@@ -32,7 +32,7 @@ const App = () => {
               <Info />
               <State />
               <Country />
-              {/* <GlobalIncrease /> */}
+              <GlobalIncrease />
             </Col>
           </Row>
         </Content>

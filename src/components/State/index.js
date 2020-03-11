@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
-import _ from "lodash";
 
 import Region from "./region"
 
@@ -23,7 +22,6 @@ const State = () => {
       }
     })
     const dataByRegion = Object.values(data.reduce((acc, re)=>{
-      if(re.region == undefined) console.log(re)
       if(acc[re.region]){
         acc[re.region]['Confirmed'] += re.Confirmed;
         acc[re.region]['confirmedDetail'].push(re)

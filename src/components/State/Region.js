@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { ResponsivePie } from '@nivo/pie'
-import { Icon } from 'antd';
 import './region.scss';
 
 import EachRegion from "./eachRegion"

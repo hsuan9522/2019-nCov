@@ -7,7 +7,9 @@ const CountryChart = props => {
   const countryName = useSelector(state => state.countryInfo);
   if(!data || !countryName) return (<div>There is no Data!</div>)
   const withoutChina = data.filter(
-    el => el.Country_Region !== "Mainland China"
+    el => { 
+      return el.Country_Region !== "China" && el.Confirmed!==0
+    }
   );
   const mapTitle = {
     Confirmed: "確診人數",
@@ -55,7 +57,7 @@ const CountryChart = props => {
         <div style={{ height: "85px" }}>
           <ResponsiveBar
             layout="horizontal"
-            data={data.filter(el => el.Country_Region === "Mainland China")}
+            data={data.filter(el => el.Country_Region === "China")}
             keys={keys}
             indexBy="Country_Region"
             margin={{ top: 5, right: 10, bottom: 50, left: 65 }}
