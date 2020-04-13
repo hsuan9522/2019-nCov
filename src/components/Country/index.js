@@ -50,7 +50,7 @@ const CountryChart = props => {
             )}
           />
         </div>
-        <div style={{ height: "300px" }}>
+        <div style={{ height: "700px" }}>
           <ResponsiveBar
             layout="horizontal"
             data={data.filter(el => el.Confirmed >= limit)}
