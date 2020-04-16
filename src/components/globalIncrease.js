@@ -4,13 +4,15 @@ import axios from "axios";
 import { ResponsiveLine } from "@nivo/line";
 import { DatePicker } from "antd";
 import "./globalIncrease.scss";
+import dayjs from "dayjs";
 
 const { RangePicker } = DatePicker;
 
 const GlobalIncrease = () => {
   const [chartData, setChartData] = useState([]);
-  const [tmpChartData, setTmpChartData] = useState([])
-  let everydayCount, everydayTotal = [];
+  const [tmpChartData, setTmpChartData] = useState([]);
+  const [everydayCount, setEverydayCount] = useState([]);
+  const [everydayTotal, setEverydayTotal] = useState([]);
   const colors = ["#E2C2A4", "#7ECABC", "#E47C67"];
 
   useEffect(() => {
@@ -25,6 +27,8 @@ const GlobalIncrease = () => {
             cumData[i] = cumData[i] + parseInt(el[i]) || 0;
           }
         })
+
+        let tmp_T = []
         for(let i in cumData){
           const d = new Date(i);
           const yy = d.getUTCFullYear()
@@ -32,27 +36,32 @@ const GlobalIncrease = () => {
           mm = mm.toString().length==1 ? '0'+ mm : mm;
           let dd = i.split('/')[1]
           dd = dd.toString().length==1 ? '0'+ dd : dd;
-          everydayTotal.push({
-            x:  yy +'/' + mm + '/' + dd,
+          tmp_T.push({
+            x: dayjs(i).format('YYYY/MM/DD'),
             y: cumData[i]
           })
         }
-        everydayCount = everydayTotal.map((el, i) => {
+       
+        setEverydayTotal(tmp_T);
+        let tmp_C = tmp_T.map((el, i) => {
           let tmpCount = el.y;
           if (i !== 0) {
-            tmpCount -= everydayTotal[i - 1].y;
+            tmpCount -= tmp_T[i - 1].y;
           }
           return {
             x: el.x,
             y: tmpCount
           };
         });
-        makeChartData();
+        setEverydayCount(tmp_C)
       })
   }, [])
 
+  useEffect(()=>{
+    makeChartData();
+  }, [everydayCount, everydayTotal])
+
   function makeChartData(data1, data2) {
-    
     const data = [
       {
         id: "每日確診人數",
@@ -73,7 +82,7 @@ const GlobalIncrease = () => {
   function disableDate(current) {
     return (
       current &&
-      (current.valueOf() > Date.now() ||
+      (current.valueOf() > dayjs(Date.now()).subtract(1,'day') ||
         current.valueOf() < new Date("2020/01/20"))
     );
   }
