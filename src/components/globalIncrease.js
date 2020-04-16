@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import axios from "axios";
 import { ResponsiveLine } from "@nivo/line";
-import { DatePicker } from "antd";
+import { DatePicker, Spin, Icon } from "antd";
 import "./globalIncrease.scss";
 import dayjs from "dayjs";
+
 
 const { RangePicker } = DatePicker;
 
 const GlobalIncrease = () => {
+  const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
   const [chartData, setChartData] = useState([]);
   const [tmpChartData, setTmpChartData] = useState([]);
   const [everydayCount, setEverydayCount] = useState([]);
@@ -100,7 +102,16 @@ const GlobalIncrease = () => {
       makeChartData(count, total);
     }
   }
-
+  if (everydayCount.length == 0 || everydayTotal.length==0){
+    return (
+      <div>
+        <h3 className="h3-title">每日/累積確診人數</h3>
+        <div className="loading">
+          <Spin indicator={antIcon} />
+        </div>
+      </div>
+    )
+  }
   return (
     <div>
       <div style={{ height: "500px" }}>
