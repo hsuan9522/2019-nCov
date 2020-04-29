@@ -84,7 +84,7 @@ const GlobalIncrease = () => {
   function disableDate(current) {
     return (
       current &&
-      (current.valueOf() > dayjs(Date.now()).subtract(1,'day') ||
+      (current.valueOf() > dayjs(everydayCount[everydayCount.length - 1].x).add(1,'day') ||
         current.valueOf() < new Date("2020/01/20"))
     );
   }

@@ -14,17 +14,17 @@ const CountryChart = props => {
   };
   const keys = ["Confirmed", "Recovered", "Deaths"];
   const colors = ["#E2C2A4", "#7ECABC", "#E47C67"];
-
+  const eachHeight = 18.3;
   return (
       <div>
         <h3 className="h3-title">各國人數狀態</h3>
-        <div style={{ height: "2500px" }}>
+        <div style={{ height: data.filter(el => el.Confirmed < limit).length*eachHeight }}>
           <ResponsiveBar
             layout="horizontal"
             data={data.filter(el => el.Confirmed < limit)}
             keys={keys}
             indexBy="Country_Region"
-            margin={{ top: 5, right: 10, bottom: 50, left: 65 }}
+            margin={{ top: 5, right: 10, bottom: 50, left: 75 }}
             padding={0.3}
             colors={colors}
             axisLeft={{
@@ -50,13 +50,13 @@ const CountryChart = props => {
             )}
           />
         </div>
-        <div style={{ height: "700px" }}>
+        <div style={{ height: data.filter(el => el.Confirmed >= limit).length*eachHeight }}>
           <ResponsiveBar
             layout="horizontal"
             data={data.filter(el => el.Confirmed >= limit)}
             keys={keys}
             indexBy="Country_Region"
-            margin={{ top: 5, right: 10, bottom: 50, left: 65 }}
+            margin={{ top: 5, right: 10, bottom: 50, left: 75 }}
             padding={0.3}
             colors={colors}
             axisTop={null}
