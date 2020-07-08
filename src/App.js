@@ -42,7 +42,7 @@ const App = () => {
             <a href="https://github.com/BlankerL/DXY-2019-nCoV-Crawler">
               DXY-2019-nCoV-Crawler
             </a>
-            / <a href="https://www.gisaid.org/">GISAID</a>
+            / <a href="https://github.com/CSSEGISandData/COVID-19">COVID-19</a>
           </div>
         </Footer>
       </Layout>
