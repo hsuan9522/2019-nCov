@@ -7,7 +7,6 @@ const State = () => {
   const countryInfected = useSelector(state=>state.countryInfected);
   const countryName = useSelector(state => state.countryInfo);
   const [dataRegion, setDataRegion] = useState([])
-
   useEffect(()=>{
     if(!countryName || !countryInfected) return ()=>{};
     const data = countryInfected.map(el=>{

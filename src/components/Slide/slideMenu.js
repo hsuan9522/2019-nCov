@@ -6,7 +6,7 @@ const SlideMenu = ()=>{
   const countryInfected = useSelector(state => state.countryInfected);
 
   return (
-    <div className="slide-menu">
+    <div className="slide-menu" key="sideMenu">
       <h3>數據表</h3>
       <Row className="row-title" type="flex" justify="space-between">
         <Col span={6}>國家</Col>
@@ -24,7 +24,7 @@ const SlideMenu = ()=>{
         return (
           <Row
             className="row"
-            key={el.OBJECTID}
+            key={el.Country_Region}
             type="flex"
             justify="space-between"
             style={el.code==='TW' ? {color: "darkred"}: {}}
