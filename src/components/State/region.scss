@@ -4,6 +4,9 @@
   .pie {
     height: 100%;
     width: calc(100% / 3);
+    g{
+      cursor: pointer;
+    }
     .title{
       text-align: center;
     }

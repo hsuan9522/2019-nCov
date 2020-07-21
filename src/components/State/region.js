@@ -8,7 +8,6 @@ const Region = (props) => {
   const [data, setData] = useState([]);
   const [chartSwitch, setChartSwitch] = useState(false);
   const [clickData, setClickData] = useState(null);
-
   const mapTitle = ["確診人數", "治癒人數", "死亡人數"];
   const regionTitle = {
     Asia: "亞洲",

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
 import axios from "axios";
 import { ResponsiveLine } from "@nivo/line";
 import { DatePicker, Spin, Icon } from "antd";

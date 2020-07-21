@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
+import { Spin, Icon } from "antd";
 
 import Region from "./region"
 
 const State = () => {
+  const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
   const countryInfected = useSelector(state=>state.countryInfected);
   const countryName = useSelector(state => state.countryInfo);
   const [dataRegion, setDataRegion] = useState([])
@@ -46,11 +48,15 @@ const State = () => {
     },{}))
     setDataRegion(dataByRegion);
   }, [countryInfected, countryName])
-
+  
+  if (dataRegion.length === 0) return (<Spin indicator={antIcon} />);
+  
   return (
     <div style={{marginTop: "30px"}}>
-      {dataRegion &&
+      {dataRegion ?
         <Region data={dataRegion} />
+        :
+        <Spin indicator={antIcon} />
       }
     </div>
   )

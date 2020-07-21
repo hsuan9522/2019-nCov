@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ResponsiveBar } from "@nivo/bar";
+import { Spin, Icon } from "antd";
 
 const CountryChart = props => {
+  const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
   const data = useSelector(state => state.countryInfected);
   const countryName = useSelector(state => state.countryInfo);
-  if(!data || !countryName) return (<div>There is no Data!</div>)
+  if (!data || !countryName) return (<div className="loading"><Spin indicator={antIcon} /></div>)
   const limit = 5000;
   const mapTitle = {
     Confirmed: "確診人數",
