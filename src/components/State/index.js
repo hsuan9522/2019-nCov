@@ -49,14 +49,14 @@ const State = () => {
     setDataRegion(dataByRegion);
   }, [countryInfected, countryName])
   
-  if (dataRegion.length === 0) return (<Spin indicator={antIcon} />);
-  
   return (
     <div style={{marginTop: "30px"}}>
-      {dataRegion ?
+      {dataRegion.length !== 0 ?
         <Region data={dataRegion} />
         :
-        <Spin indicator={antIcon} />
+        <div className="loading">
+          <Spin indicator={antIcon} />
+        </div>
       }
     </div>
   )
