@@ -9,20 +9,21 @@ const Region = (props) => {
   const [chartSwitch, setChartSwitch] = useState(false);
   const [clickData, setClickData] = useState(null);
   const mapTitle = ["確診人數", "治癒人數", "死亡人數"];
-  const regionTitle = {
-    Asia: "亞洲",
-    Europe: "歐洲",
-    Other: "其他",
-    Americas: "美洲",
-    Oceania: "大洋洲",
-    Africa: "非洲"
-  }
+  
   const nivoColor = ["rgb(232, 193, 160)", "rgb(244, 117, 96)", "rgb(241, 225, 91)", "rgb(232, 168, 56)", "rgb(97, 205, 187)", "rgb(151, 227, 213)"]
 
   useEffect(() => {
     let tmp = [[], [], []]
+    const regionTitle = {
+      Asia: "亞洲",
+      Europe: "歐洲",
+      Other: "其他",
+      Americas: "美洲",
+      Oceania: "大洋洲",
+      Africa: "非洲",
+    };
     props.data.forEach(el => {
-      tmp[0].push({ id: el.region, value: el.Confirmed, label: regionTitle[el.region], country: el. confirmedDetail });
+      tmp[0].push({ id: el.region, value: el.Confirmed, label: regionTitle[el.region], country: el.confirmedDetail });
       tmp[1].push({ id: el.region, value: el.Recovered, label: regionTitle[el.region], country: el.recoveredDetail });
       tmp[2].push({ id: el.region, value: el.Deaths, label: regionTitle[el.region], country: el.deathsDetail });
     })
@@ -30,7 +31,7 @@ const Region = (props) => {
   }, [props.data])
 
   function handleClick(data, i) {
-    if(data.value==0) return false;
+    if(data.value===0) return false;
     setChartSwitch(true);
     data.index = i;
     setClickData(data);
@@ -69,7 +70,7 @@ const Region = (props) => {
             }
           </div>
           <div style={{ textAlign: "center", marginTop: "10px" }}>
-            {data.length != 0 &&
+            {data.length !== 0 &&
               data[0].map((el, index) => {
                 return (
                   <div key={index} className="pie-labels-wrapper">

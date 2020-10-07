@@ -9,7 +9,7 @@ import './map.scss';
 const Map = (props)=> {
   const infected = useSelector(state=>state.countryInfected);
   const [data, setData] = useState([]);
-  const colors = ["rgb(215, 100, 69)", "#F36A62", "rgb(232, 193, 160)","#EBDFCF", "rgb(151, 227, 213)", "rgb(0, 176, 167)"];
+  // const colors = ["rgb(215, 100, 69)", "#F36A62", "rgb(232, 193, 160)","#EBDFCF", "rgb(151, 227, 213)", "rgb(0, 176, 167)"];
 
   useEffect(()=>{
     const tmp = infected.map(el=>{
