@@ -276,5 +276,8 @@
   { "code": "XK", "key": "Kosovo", "zh":"科索沃"},
   { "code": "other", "key": "Others", "zh": "其他" },
   { "code": "", "key": "Channel Islands", "zh": "海峽群島" },
-  { "code": "", "key": "Diamond Princess", "zh": "公主號" }
+  { "code": "", "key": "Diamond Princess", "zh": "公主號" },
+  { "code": "", "key": "MS Zaandam", "zh": "贊丹號" },
+  { "code": "", "key": "West Bank and Gaza", "zh": "約旦河西岸/加沙" }
 ]
+

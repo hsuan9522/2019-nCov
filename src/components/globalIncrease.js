@@ -66,11 +66,11 @@ const GlobalIncrease = () => {
   useEffect(() => {
     //時長太長，初始改抓前兩個月
     if (tmpChartData.length>0) {
-      const day = new Date();
-      const firstday = dayjs(day).subtract(2, 'month').format("YYYY/MM/DD");
-      const lastday = dayjs(day).subtract(1, 'day').format("YYYY/MM/DD");
+      const firstday = dayjs(new Date()).subtract(2, 'month').format("YYYY/MM/DD");
       const start = tmpChartData[0].data.findIndex((e) => e.x === firstday);
-      const end = tmpChartData[1].data.findIndex((e) => e.x === lastday);
+      //因為csv那邊可能沒那麼快有前一天的資料，最後選擇直接用最後一筆
+      const end = tmpChartData[0].data.length - 1;
+      
       const count = tmpChartData[0].data.slice(start, end + 1);
       const total = tmpChartData[1].data.slice(start, end + 1);
       makeChartData(count, total);
@@ -126,7 +126,7 @@ const GlobalIncrease = () => {
         range[i] = chart[0].data.findIndex((e) => e.x === el);
       });
       const count = chart[0].data.slice(range[0], range[1] + 1);
-      const total = chart[1].data.slice(range[0], range[1] + 1);
+      const total = chart[0].data.slice(range[0], range[1] + 1);
       makeChartData(count, total);
     }
   }
@@ -160,7 +160,7 @@ const GlobalIncrease = () => {
 
         <ResponsiveLine
           data={chartData}
-          margin={{ top: 5, right: 5, bottom: 50, left: 65 }}
+          margin={{ top: 5, right: 5, bottom: 50, left: 80 }}
           xScale={{ type: "point" }}
           yScale={{ type: "linear" }}
           axisTop={null}
@@ -200,7 +200,7 @@ const GlobalIncrease = () => {
         <h3 className="h3-title">累積確診人數</h3>
         <ResponsiveLine
           data={chartData2}
-          margin={{ top: 5, right: 5, bottom: 50, left: 65 }}
+          margin={{ top: 5, right: 5, bottom: 50, left: 80 }}
           xScale={{ type: "point" }}
           yScale={{ type: "linear" }}
           axisTop={null}
