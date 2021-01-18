@@ -27,7 +27,8 @@ const SlideMenu = ()=>{
             key={el.Country_Region}
             type="flex"
             justify="space-between"
-            style={el.code==='TW' ? {color: "darkred"}: {}}
+            align="middle"
+            style={el.code === "TW" ? { color: "darkred" } : {}}
           >
             <Col span={6}>
               {el.zh || el.Country_Region }

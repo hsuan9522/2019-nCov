@@ -196,7 +196,7 @@ const GlobalIncrease = () => {
       {
         //因為累積數量過大，所以分兩塊寫
       }
-      <div style={{ height: "500px", marginTop: "100px" }}>
+      <div style={{ height: "500px", marginTop: "170px" }}>
         <h3 className="h3-title">累積確診人數</h3>
         <ResponsiveLine
           data={chartData2}
@@ -225,9 +225,9 @@ const GlobalIncrease = () => {
           enableSlices="x"
         />
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          {chartData.map((el, i) => (
+          {chartData2.map((el, i) => (
             <div key={i} className="legend-wrapper">
-              <div className="legend" style={{ backgroundColor: colors[i] }} />
+              <div className="legend" style={{ backgroundColor: colors2[i] }} />
               <span>{el.id}</span>
             </div>
           ))}
