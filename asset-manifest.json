@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/2019-nCov/static/css/main.b49426c3.chunk.css",
-    "main.js": "/2019-nCov/static/js/main.2350c0b8.chunk.js",
-    "main.js.map": "/2019-nCov/static/js/main.2350c0b8.chunk.js.map",
+    "main.js": "/2019-nCov/static/js/main.ebbb6a8c.chunk.js",
+    "main.js.map": "/2019-nCov/static/js/main.ebbb6a8c.chunk.js.map",
     "runtime~main.js": "/2019-nCov/static/js/runtime~main.f81b73c2.js",
     "runtime~main.js.map": "/2019-nCov/static/js/runtime~main.f81b73c2.js.map",
     "static/css/2.9ddb28ea.chunk.css": "/2019-nCov/static/css/2.9ddb28ea.chunk.css",
     "static/js/2.6af47334.chunk.js": "/2019-nCov/static/js/2.6af47334.chunk.js",
     "static/js/2.6af47334.chunk.js.map": "/2019-nCov/static/js/2.6af47334.chunk.js.map",
     "index.html": "/2019-nCov/index.html",
-    "precache-manifest.68dacb3793bd6f4442540bb72db4ed8b.js": "/2019-nCov/precache-manifest.68dacb3793bd6f4442540bb72db4ed8b.js",
+    "precache-manifest.d077d1e5b2453030979c04921fa279f1.js": "/2019-nCov/precache-manifest.d077d1e5b2453030979c04921fa279f1.js",
     "service-worker.js": "/2019-nCov/service-worker.js",
     "static/css/2.9ddb28ea.chunk.css.map": "/2019-nCov/static/css/2.9ddb28ea.chunk.css.map",
     "static/css/main.b49426c3.chunk.css.map": "/2019-nCov/static/css/main.b49426c3.chunk.css.map"
