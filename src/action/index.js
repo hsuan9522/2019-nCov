@@ -36,8 +36,9 @@ export const getCountryVirusData = () => async dispatch => {
 };
 
 export const getCountryInfo = () => async dispatch => {
+  //來源： https://restcountries.com/#api-endpoints-v2-all
   try {
-    const res = await axios.get('https://restcountries.eu/rest/v2/all');
+    const res = await axios.get('https://restcountries.com/v2/all')
     const tmp = zhCountryName.map(el => {
       let detail = res.data.find(e => e.alpha2Code === el.code);
       if (detail) {
